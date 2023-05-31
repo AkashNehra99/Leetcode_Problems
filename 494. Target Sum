@@ -1,0 +1,23 @@
+class Solution {
+    int arr[];
+    int target;
+    int count = 0;
+    
+    public int findTargetSumWays(int[] nums, int target) {
+        this.arr = nums;
+        this.target = target;
+        
+        findWays(0, 0);
+        return this.count;
+    }
+    private void findWays(int index, int currSum){
+        // base case
+        if(index >= arr.length){
+            if(currSum == target)
+                this.count++;
+            return;
+        }
+        findWays(index+1, currSum + arr[index]);
+        findWays(index+1, currSum - arr[index]);
+    }
+}
