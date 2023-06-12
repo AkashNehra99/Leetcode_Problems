@@ -1,0 +1,8 @@
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n<=0)
+            return false;
+        return ((n&(n-1))==0);   // bitwise And operation between number with power of 2 and one less than that is always 0 e.g 16 && 15 =0
+           
+    }
+}
