@@ -1,0 +1,17 @@
+class Solution {
+    public int mySqrt(int x) {
+        // return (int)Math.sqrt(x);  --> with the use of inbuilt function
+        int l1 = 1;
+        int l2 = x;
+        while(l1<=l2){
+            int mid = (l1+l2)/2;
+            if(x/mid == mid)
+                return mid;
+            else if(mid>x/mid)
+                l2 = mid-1;
+            else
+                l1 = mid+1;
+        }
+        return l2;
+    }
+}
