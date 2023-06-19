@@ -1,3 +1,11 @@
+// optimised solution
+class Solution {
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+}
+
+
 class Solution {
     public int strStr(String haystack, String needle) {
         if(needle.length() > haystack.length())
