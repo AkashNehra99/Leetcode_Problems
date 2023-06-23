@@ -1,0 +1,28 @@
+class Solution {
+    public int vowelStrings(String[] words, int left, int right) {
+        int count=0;
+        for(int i=left;i<=right;i++){
+            char l = words[i].charAt(0);
+            char r = words[i].charAt(words[i].length()-1);
+            if((l=='a'||l=='e'||l=='i'||l=='o'||l=='u') && (r=='a'||r=='e'||r=='i'||r=='o'||r=='u')){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+// another approach
+/*
+class Solution {
+    public int vowelStrings(String[] words, int left, int right) {
+        String str = "aeiouAEIOU";
+        int count = 0;
+        for(int i=left; i<=right; i++){
+            if(str.contains(String.valueOf(words[i].charAt(0)))  && str.contains(String.valueOf(words[i].charAt(words[i].length()-1))))
+                count++;
+        }
+        return count;
+    }
+}
+*/
