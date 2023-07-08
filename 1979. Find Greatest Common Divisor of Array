@@ -1,0 +1,12 @@
+class Solution {
+    public int findGCD(int[] nums) {
+        Arrays.sort(nums);
+        int gcd = Integer.min(nums[0], nums[nums.length-1]);
+        while(gcd > 0){
+            if(nums[0] % gcd==0 && nums[nums.length-1] % gcd==0)
+                break;
+            gcd--;
+        }
+        return gcd;
+    }
+}
